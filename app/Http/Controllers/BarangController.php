@@ -12,7 +12,7 @@ class BarangController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         if($request->has('search')){ // Pemilihan jika ingin melakukan pencarian nama
             $barangs = Barang::where('kode_barang', 'like', "%".$request->search."%")->paginate(5);

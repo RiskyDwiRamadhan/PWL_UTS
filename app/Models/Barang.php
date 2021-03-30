@@ -12,4 +12,18 @@ class Barang extends Model
     protected $table="barang"; 
     public $timestamps= false;
     protected $primaryKey = 'kode_barang';
+    /**
+     * The attributes that are mass assignable.
+     *
+     *  @var array
+     */
+    protected $fillable = [
+    'id_barang',
+    'kode_barang',
+    'nama_barang',
+    'kategori_barang',
+    'harga',
+    'qty',
+    ];
+
 }

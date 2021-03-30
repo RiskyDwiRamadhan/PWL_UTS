@@ -20,7 +20,7 @@ class CreateBarangsTable extends Migration
             $table->String('kategori_barang', 30)->nullable();
             $table->integer('harga')->nullable();
             $table->integer('qty')->nullable();
-            $table->timestamps();
+            $table->timestamps(); 
         });
     }
 
@@ -31,6 +31,6 @@ class CreateBarangsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('barangs');
+        Schema::dropIfExists('barang');
     }
 }

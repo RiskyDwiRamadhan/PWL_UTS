@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Barang extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+    
+    protected $table="barang"; 
+    public $timestamps= false;
+    protected $primaryKey = 'kode_barang';
 }

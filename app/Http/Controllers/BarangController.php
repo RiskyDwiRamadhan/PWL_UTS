@@ -43,7 +43,7 @@ class BarangController extends Controller
     {
         $request->validate([
             'id_barang' => 'required',
-            'kd_barang' => 'required',
+            'kode_barang' => 'required',
             'nama_barang' => 'required',
             'kategori_barang' => 'required',
             'harga' => 'required',
@@ -59,7 +59,7 @@ class BarangController extends Controller
      */
     public function show($id)
     {
-        $Barang = Barang::find($kd_barang);
+        $Barang = Barang::find($kode_barang);
         return view('barang.detail', compact('Barang'));
     }
 
@@ -69,9 +69,9 @@ class BarangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($kd_barang)
+    public function edit($kode_barang)
     {
-        $Barang = Barang::find($kd_barang);
+        $Barang = Barang::find($kode_barang);
         return view('barang.edit', compact('Barang'));
     }
 
@@ -82,18 +82,18 @@ class BarangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $kd_barang)
+    public function update(Request $request, $kode_barang)
     {
         $request->validate([
             'id_barang' => 'required',
-            'kd_barang' => 'required',
+            'kode_barang' => 'required',
             'nama_barang' => 'required',
             'kategori_barang' => 'required',
             'harga' => 'required',
             'qty' => 'required',
         ]);
 
-        Barang::find($kd_barang)->update($request->all());
+        Barang::find($kode_barang)->update($request->all());
             
         return redirect()->route('barang.index')->with('success', 'Barang Berhasil Diupdate');
     }
@@ -104,9 +104,9 @@ class BarangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($kd_barang)
+    public function destroy($kode_barang)
     {
-        MahasisBarangwa::find($kd_barang)->delete();
+        MahasisBarangwa::find($kode_barang)->delete();
         return redirect()->route('barang.index')-> with('success', 'Barang Berhasil Dihapus');
     }
 }

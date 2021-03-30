@@ -56,7 +56,7 @@
                     <a class="btn btn-primary" href="{{ route('barang.edit',$barang->id_barang) }}">Edit</a>
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button class="btn btn-danger" onclick="return confirm('Anda yakin ingin meghapus data ini ?')">Delete</button>
                     </form>
                     </td>
                 </tr>

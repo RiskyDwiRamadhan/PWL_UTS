@@ -47,7 +47,7 @@
                     <td>{{ $barang->kode_barang }}</td>
                     <td>{{ $barang->nama_barang }}</td>
                     <td>{{ $barang->kategori_barang }}</td>
-                    <td>{{ $barang->harga }}</td>
+                    <td>Rp.{{ $barang->harga }}</td>
                     <td>{{ $barang->qty }}</td>
                     <td>
                     <form action="{{ route('barang.destroy',$barang->kode_barang) }}" method="POST">

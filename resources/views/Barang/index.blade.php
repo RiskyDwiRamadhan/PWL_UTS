@@ -31,7 +31,7 @@
         </div>
     @endif
 
-    <table class="table table-bordered">
+    <table class="table table-bordered"> 
         <tr>
             <th>Id Barang</th>
             <th>Kode Barang</th>

@@ -47,8 +47,11 @@ class BarangController extends Controller
             'nama_barang' => 'required',
             'kategori_barang' => 'required',
             'harga' => 'required',
-            'qty' => 'required',
+            'qty' => 'required'
         ]);
+        Barang::create($request->all());
+        
+        return redirect()->route('barang.index')->with('success', 'Barang Berhasil Ditambahkan');
     }
 
     /**
@@ -59,7 +62,7 @@ class BarangController extends Controller
      */
     public function show($id)
     {
-        $Barang = Barang::find($kode_barang);
+        $Barang = Barang::find($id);
         return view('barang.detail', compact('Barang'));
     }
 
@@ -82,7 +85,7 @@ class BarangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $kode_barang)
+    public function update(Request $request, $id_barang)
     {
         $request->validate([
             'id_barang' => 'required',
@@ -93,7 +96,7 @@ class BarangController extends Controller
             'qty' => 'required',
         ]);
 
-        Barang::find($kode_barang)->update($request->all());
+        Barang::find($id_barang)->update($request->all());
             
         return redirect()->route('barang.index')->with('success', 'Barang Berhasil Diupdate');
     }
@@ -106,7 +109,7 @@ class BarangController extends Controller
      */
     public function destroy($kode_barang)
     {
-        MahasisBarangwa::find($kode_barang)->delete();
+        Barang::find($kode_barang)->delete();
         return redirect()->route('barang.index')-> with('success', 'Barang Berhasil Dihapus');
     }
 }

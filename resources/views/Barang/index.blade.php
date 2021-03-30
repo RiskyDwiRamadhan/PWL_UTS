@@ -33,11 +33,12 @@
 
     <table class="table table-bordered">
         <tr>
-            <th>Nim</th>
-            <th>Nama</th>
-            <th>Kelas</th>
-            <th>Jurusan</th>
-            <th>No_HP</th>
+            <th>Id Barang</th>
+            <th>Kode Barang</th>
+            <th>Nama Barang</th>
+            <th>Kategori Barang</th>
+            <th>Harga</th>
+            <th>QTY</th>
             <th width="280px">Action</th>
             </tr>
             @foreach ($barangs as $barang)
@@ -60,5 +61,8 @@
                     </td>
                 </tr>
             @endforeach
-    </table>            
+    </table> 
+    <div class="d-flex justify-content-center">
+        {{$barangs->links()}}
+    </div>   
 @endsection
